@@ -26,8 +26,6 @@ def parse_input(user_input):
 
 @input_error
 def add_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError
     name, phone = args
     contacts[name] = phone
     return "Contact added."
@@ -48,10 +46,8 @@ def show_phone(args, contacts):
     if not args:
         raise IndexError
     name = args[0]
-    if name in contacts:
-        return contacts[name]
-    else:
-        raise KeyError(name)
+    return contacts[name]
+    
 
 @input_error
 def show_all(contacts):
