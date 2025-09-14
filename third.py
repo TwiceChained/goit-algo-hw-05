@@ -32,8 +32,6 @@ def add_contact(args, contacts):
 
 @input_error
 def change_contact(args, contacts):
-    if len(args) != 2:
-        raise ValueError
     name, phone = args
     if name in contacts:
         contacts[name] = phone
@@ -43,8 +41,6 @@ def change_contact(args, contacts):
 
 @input_error
 def show_phone(args, contacts):
-    if not args:
-        raise IndexError
     name = args[0]
     return contacts[name]
     
